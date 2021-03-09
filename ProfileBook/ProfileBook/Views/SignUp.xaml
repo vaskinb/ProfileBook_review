@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ProfileBook.Views.SignUp"
+             Title="{Binding Resources[SignUp]}"
+             Style="{StaticResource ContentPageStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+       
+        <StackLayout Grid.Row="1"
+                         Spacing="20"
+                         Padding="40, 0">
+
+            <Entry Placeholder="Login"
+                       Text="{Binding Login}"/>
+
+            <Entry Placeholder="Password"
+                       Text="{Binding Password}"
+                       IsPassword="True"/>
+
+            <Entry Placeholder="ConfirmPassword"
+                       Text="{Binding ConfirmPassword}"
+                       IsPassword="True"/>
+
+        </StackLayout>
+
+        <StackLayout Grid.Row="3"
+                         Spacing="20"
+                         Padding="40, 0">
+
+            <Button Text="SIGN_UP"
+                        Command="{Binding SignUpCommand}"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        BackgroundColor="Chocolate"
+                        BorderColor="Black"
+                        BorderWidth="1"
+                        HeightRequest="60"
+                        IsEnabled="{Binding IsSignUpButtonEnabled}"/>
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
